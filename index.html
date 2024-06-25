@@ -1,0 +1,39 @@
+<!-- U09226075 -->
+<!-- Set up HTML. -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Coding Challenge 12</title>
+        <meta charset="UTF-8">
+        <!-- Link to D3.js. -->
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <!-- Link to script.js. -->
+        <script src="script.js"></script>
+    </head>
+    <body onload="main()">
+
+        <h1>Stocks:</h1>
+        <!-- Create list. -->
+        <ul id="list"></ul>
+
+        <!-- Add filter stock options. -->
+        <label for="stockFilter">Stock:</label>
+            <select onchange="update()" name="stockFilter" id="stockFilter">
+                <option value="1"></option>
+                <option value="Apple">Apple</option>
+                <option value="Google">Google</option>
+            </select>
+
+        <!-- Add date filter. -->
+        <label for="dateFilter">Date:</label>
+            <select onchange="update()" name="dateFilter" id="dateFilter">
+                <option value="1"></option>
+                <option value="2023-01-01">2023-01-01</option>
+                <option value="2023-01-02">2023-01-02</option>
+                <option value="2023-01-03">2023-01-03</option>
+                <option value="2023-01-04">2023-01-04</option>
+                <option value="2023-01-05">2023-01-05</option>
+            </select>
+
+    </body>
+</html>
