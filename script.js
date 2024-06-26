@@ -62,8 +62,25 @@ function visualization() {
             .attr("x", function(d){return xScale(d.Date);})
             .attr("y", function(d){return yScale(d.Price);})
             .attr("width", xScale.bandwidth())
-            .attr("height", function(d){return (height - yScale(d.Price));});
-    });
+            .attr("height", function(d){return (height - yScale(d.Price));})
+            .on("mouseover", toolTip)
+            .on("mouseover", function(){
+                d3.select(this)
+                    .style("fill","aqua")
+            })
+            .on("mouseout", function(){
+                d3.select(this)
+                    .style("fill","lightskyblue")
+                d3.select('#tooltip').style("opacity", 0)
+            })
 
+        function toolTip(d, i){
+            d3.select('#tooltip')
+                .style('left', xScale.bandwidth()/2 +'px')
+                .style('top', yScale(d.Price)+'px')
+                .select('value').text(d.Price)
+                .style('opacity', 1);
+        }
+    });
 
 };
